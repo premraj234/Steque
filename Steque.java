@@ -80,6 +80,10 @@ public class Steque<Item> implements Iterable<Item> {
      * @param item Item to be inserted.
      */
     public void push(Item item) {
+        if(item==null) throw new IllegalArgumentException();
+        if(size >= stack.length) resize();
+        stack[size] = item;
+        size++;
 
     }
     
